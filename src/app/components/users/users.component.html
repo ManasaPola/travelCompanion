@@ -1,0 +1,11 @@
+<div *ngIf="users?.length > 0;else noUsers">
+  <ul *ngFor="let user of users" class="collections">
+    <li class="collection-item">{{user.name}}</li>
+  </ul>
+</div>
+
+<ng-template #noUsers>
+  <hr>
+  <h5>There are no items to list</h5>
+
+</ng-template>
