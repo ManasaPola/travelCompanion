@@ -13,6 +13,16 @@ import { SignUpScreenComponent } from './screens/sign-up-screen/sign-up-screen.c
 import {FormsModule} from '@angular/forms';
 
 import { RegistrationService } from './services/registration.service';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import { TravellersComponent } from './components/travellers/travellers.component';
+import { TravellerComponent } from './components/travellers/traveller/traveller.component';
+import { TravellerListComponent } from './components/travellers/traveller-list/traveller-list.component';
+import { TravellerService} from './services/traveller.service';
+import { ToastrModule} from 'ngx-toastr';
+import { MessagingComponent } from './components/travellers/messaging/messaging.component';
+import { MessagePopupComponent } from './components/travellers/message-popup/message-popup.component';
+import {MessagingService} from './services/messaging.service';
+import {LoginService} from './screens/login-screen/login.service';
 
 
 @NgModule({
@@ -20,16 +30,23 @@ import { RegistrationService } from './services/registration.service';
     AppComponent,
     UsersComponent,
     LoginScreenComponent,
-    SignUpScreenComponent
+    SignUpScreenComponent,
+    TravellersComponent,
+    TravellerComponent,
+    TravellerListComponent,
+    MessagingComponent,
+    MessagePopupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase, 'travelfs'),
     AngularFirestoreModule,
-    FormsModule
+    AngularFireDatabaseModule,
+    FormsModule,
+    ToastrModule.forRoot()
   ],
-  providers: [UserService, RegistrationService],
+  providers: [UserService, RegistrationService, TravellerService, MessagingService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

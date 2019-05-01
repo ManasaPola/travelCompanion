@@ -1,0 +1,15 @@
+<h6 class="text-center">Travellers</h6><br/>
+<table class="table-sm table-hover">
+  <tr *ngFor="let traveller of travellerList">
+    <td>{{traveller.name}}</td>
+    <td>{{traveller.fromAirport}}</td>
+    <td>{{traveller.toAirport}}</td>
+    <td>{{traveller.fromDate}}</td>
+    <td>{{traveller.toDate}}</td>
+    <td>
+      <a class="btn" (click)="onSend()">
+        <i class="fa fa-comment-o"></i>
+      </a>
+    </td>
+  </tr>
+</table>

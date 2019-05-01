@@ -1,0 +1,7 @@
+<h6 class="text-center">Messages</h6><br/>
+<table class="table-sm table-hover">
+  <tr *ngFor="let message of messageList">
+    <td>{{message.receiverId.split('@')[0]}}</td>
+    <td>{{message.messageText}}</td>
+  </tr>
+</table>
