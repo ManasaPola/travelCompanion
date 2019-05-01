@@ -55,7 +55,7 @@ export class TravellerService {
       toAirport: traveller.toAirport,
       fromDate: traveller.fromDate,
       toDate: traveller.toDate
-  });
+    });
   }
 
   deleteEmployee($key: string) {

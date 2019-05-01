@@ -1,0 +1,28 @@
+<form class="form-inline" #travellerRegisterForm="ngForm" (ngSubmit)="onSubmit(travellerRegisterForm)">
+  <div class="form-group mr-1">
+    <input class="form-control" name="name" #name="ngModel" [(ngModel)]="travellerService.name" placeholder="Full Name">
+  </div>
+  <div class="form-group mr-2">
+    <!--<label>From Airport</label>-->
+    <input class="form-control" name="fromAirport" #fromAirport="ngModel" [(ngModel)]="travellerService.fromAirport" placeholder="From Aiport">
+  </div>
+  <div class="form-group mr-2">
+    <!--<label>To Airport</label>-->
+    <input class="form-control" name="toAirport" #toAirport="ngModel" [(ngModel)]="travellerService.toAirport" placeholder="To Airport">
+  </div>
+  <div class="form-group mr-2">
+    <!--<label>From Date</label>-->
+    <input class="form-control" name="fromDate" #fromDate="ngModel" [(ngModel)]="travellerService.fromDate" placeholder="From Date (MM/DD/YYYY)">
+  </div>
+  <div class="form-group mr-2">
+    <!--<label>To Date</label>-->
+    <input class="form-control" name="toDate" #toDate="ngModel" [(ngModel)]="travellerService.toDate" placeholder="To Date (MM/DD/YYYY)">
+  </div>
+  <div class="form-group">
+    <button class="btn btn-default" type="submit">
+      <i class="fa fa-floppy-o"></i>
+      Search</button>
+    <!--<button class="btn btn-default" type="button" (click)="resetForm(travellerForm)">-->
+    <!--<i class="fa fa-repeat"></i>Reset</button>-->
+  </div>
+</form>

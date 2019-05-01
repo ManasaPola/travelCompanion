@@ -23,6 +23,9 @@ import { MessagingComponent } from './components/travellers/messaging/messaging.
 import { MessagePopupComponent } from './components/travellers/message-popup/message-popup.component';
 import {MessagingService} from './services/messaging.service';
 import {LoginService} from './screens/login-screen/login.service';
+import { HomeComponent } from './components/home/home.component';
+import { TravellerSearchComponent } from './components/traveller-search/traveller-search.component';
+import { TravelregisterComponent } from './components/travelregister/travelregister.component';
 
 
 @NgModule({
@@ -35,7 +38,10 @@ import {LoginService} from './screens/login-screen/login.service';
     TravellerComponent,
     TravellerListComponent,
     MessagingComponent,
-    MessagePopupComponent
+    MessagePopupComponent,
+    HomeComponent,
+    TravellerSearchComponent,
+    TravelregisterComponent
   ],
   imports: [
     BrowserModule,

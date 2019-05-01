@@ -12,9 +12,16 @@ export class RegistrationService {
 
   SignUp(email: string, password: string) {
 
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(
-      error => console.log(error)
-    );
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(
+        response => {
+          this.router.navigateByUrl('/Travellers');
+          this.loginService.login(email, password);
+        }
+      )
+      .catch(
+        error => console.log(error)
+      );
   }
 
   login(email: string, password: string) {

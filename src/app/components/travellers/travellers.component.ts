@@ -16,6 +16,7 @@ export class TravellersComponent implements OnInit {
   constructor(private travellerService: TravellerService) { }
 
   ngOnInit() {
+
   }
 
 }
