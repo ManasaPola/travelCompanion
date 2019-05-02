@@ -10,7 +10,7 @@ import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 export class TravellerService {
   travellerList: AngularFireList<any>;
   messageList: AngularFireList<any>;
-  // messageObj: AngularFireList = [];
+  messageObj: AngularFireList<any>;
   newmessageList: AngularFireList<any>;
   selectedTraveller: Traveller = new Traveller();
   constructor(private firebase: AngularFireDatabase) { }
@@ -27,21 +27,20 @@ export class TravellerService {
     return this.messageList;
   }
 
-  // sendMessageData(receiverId: string, ) {
-  //   this.messageList.push({
-  //     receiverId: receiverId,
-  //     messageText: 'hello'
-  //   });
-  // }
-
-  sendMessageData(message: string, email: string) {
-    this.newmessageList.push({
-      receiverId: email,
-      messageText: message
+  sendMessageData(message: string,email: string) {
+    if (!this.messageObj) {
+      this.messageObj = this.getMData();
+    }
+    this.messageObj.push({
+      messageText: message,
+      receiverId: email
     });
   }
 
   insertTraveller(traveller: Traveller) {
+    if (!this.travellerList) {
+      this.travellerList = this.getData();
+    }
     this.travellerList.push({
       name: traveller.name,
       fromAirport: traveller.fromAirport,

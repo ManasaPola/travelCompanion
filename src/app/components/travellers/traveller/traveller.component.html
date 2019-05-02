@@ -1,26 +1,73 @@
-<form class="form-inline" #travellerForm="ngForm" (ngSubmit)="onSubmit(travellerForm)">
-  <div class="form-group mr-1">
-    <input class="form-control" name="name" #name="ngModel" [(ngModel)]="travellerService.name" placeholder="Full Name">
+<!--<form class="form-inline" #travellerForm="ngForm" (ngSubmit)="onSubmit(travellerForm)">-->
+  <!--<div class="form-group mr-1">-->
+    <!--<input class="form-control" name="name" #name="ngModel" [(ngModel)]="travellerService.name" placeholder="Full Name">-->
+  <!--</div>-->
+  <!--<div class="form-group mr-2">-->
+    <!--&lt;!&ndash;<label>From Airport</label>&ndash;&gt;-->
+    <!--<input class="form-control" name="fromAirport" #fromAirport="ngModel" [(ngModel)]="travellerService.fromAirport" placeholder="From Aiport">-->
+  <!--</div>-->
+  <!--<div class="form-group mr-2">-->
+    <!--&lt;!&ndash;<label>To Airport</label>&ndash;&gt;-->
+    <!--<input class="form-control" name="toAirport" #toAirport="ngModel" [(ngModel)]="travellerService.toAirport" placeholder="To Airport">-->
+  <!--</div>-->
+  <!--<div class="form-group mr-2">-->
+    <!--&lt;!&ndash;<label>From Date</label>&ndash;&gt;-->
+    <!--<input type="date" class="form-control" name="fromDate" #fromDate="ngModel" [(ngModel)]="travellerService.fromDate" placeholder="From Date (MM/DD/YYYY)">-->
+  <!--</div>-->
+  <!--<div class="form-group mr-2">-->
+    <!--&lt;!&ndash;<label>To Date</label>&ndash;&gt;-->
+    <!--<input type="date" class="form-control" name="toDate" #toDate="ngModel" [(ngModel)]="travellerService.toDate" placeholder="To Date (MM/DD/YYYY)">-->
+  <!--</div>-->
+  <!--<div class="form-group">-->
+    <!--<button class="btn btn-default" type="submit">-->
+      <!--<i class="fa fa-floppy-o"></i>-->
+      <!--Search</button>-->
+  <!--</div>-->
+<!--</form>-->
+
+
+<div class="image">
+  <div class="row">
+    <br/><br/><br/><br/>
   </div>
-  <div class="form-group mr-2">
-    <!--<label>From Airport</label>-->
-    <input class="form-control" name="fromAirport" #fromAirport="ngModel" [(ngModel)]="travellerService.fromAirport" placeholder="From Aiport">
+  <div class="row">
+    <div class="col-sm-11 mx-auto">
+      <div class="card bg-secondary text-white">
+        <div class="card-title">
+          <h4 class="text-center">Enter your travel information</h4>
+
+        </div>
+
+        <div class="card-body">
+          <form class="form-inline" #travellerForm="ngForm" (ngSubmit)="onSubmit(travellerForm)">
+            <div class="form-group mr-1">
+              <input class="form-control" name="name" #name="ngModel" [(ngModel)]="travellerService.name" placeholder="Full Name">
+            </div>
+            <div class="form-group mx-auto">
+              <!--<label>From Airport</label>-->
+              <input class="form-control" name="fromAirport" #fromAirport="ngModel" [(ngModel)]="travellerService.fromAirport" placeholder="From Airport">
+            </div>
+            <div class="form-group mx-auto">
+              <!--<label>To Airport</label>-->
+              <input class="form-control" name="toAirport" #toAirport="ngModel" [(ngModel)]="travellerService.toAirport" placeholder="To Airport">
+            </div>
+            <div class="form-group mx-auto">
+              <!--<label>From Date</label>-->
+              <input type="date" class="form-control" name="fromDate" #fromDate="ngModel" [(ngModel)]="travellerService.fromDate" placeholder="From Date (MM/DD/YYYY)">
+            </div>
+            <div class="form-group mx-auto">
+              <!--<label>To Date</label>-->
+              <input type="date" class="form-control" name="toDate" #toDate="ngModel" [(ngModel)]="travellerService.toDate" placeholder="To Date (MM/DD/YYYY)">
+            </div>
+            <div class="form-group mx-auto">
+              <button class="btn btn-primary" type="submit">
+                <i class="fa fa-floppy-o"></i>
+                Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="form-group mr-2">
-    <!--<label>To Airport</label>-->
-    <input class="form-control" name="toAirport" #toAirport="ngModel" [(ngModel)]="travellerService.toAirport" placeholder="To Airport">
-  </div>
-  <div class="form-group mr-2">
-    <!--<label>From Date</label>-->
-    <input type="date" class="form-control" name="fromDate" #fromDate="ngModel" [(ngModel)]="travellerService.fromDate" placeholder="From Date (MM/DD/YYYY)">
-  </div>
-  <div class="form-group mr-2">
-    <!--<label>To Date</label>-->
-    <input type="date" class="form-control" name="toDate" #toDate="ngModel" [(ngModel)]="travellerService.toDate" placeholder="To Date (MM/DD/YYYY)">
-  </div>
-  <div class="form-group">
-    <button class="btn btn-default" type="submit">
-      <i class="fa fa-floppy-o"></i>
-      Search</button>
-  </div>
-</form>
+  <br/>
+</div>
