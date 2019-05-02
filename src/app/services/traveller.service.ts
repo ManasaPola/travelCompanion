@@ -3,14 +3,19 @@ import {Traveller} from './traveller.model';
 import {Messaging} from './messaging.model';
 import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class TravellerService {
   travellerList: AngularFireList<any>;
   messageList: AngularFireList<any>;
+  // messageObj: AngularFireList = [];
+  newmessageList: AngularFireList<any>;
   selectedTraveller: Traveller = new Traveller();
   constructor(private firebase: AngularFireDatabase) { }
+
+
 
   getData() {
     this.travellerList = this.firebase.list('travellers');
@@ -22,10 +27,17 @@ export class TravellerService {
     return this.messageList;
   }
 
-  sendMessageData(receiverId: string) {
-    this.messageList.push({
-      receiverId: receiverId,
-      messageText: 'hello'
+  // sendMessageData(receiverId: string, ) {
+  //   this.messageList.push({
+  //     receiverId: receiverId,
+  //     messageText: 'hello'
+  //   });
+  // }
+
+  sendMessageData(message: string, email: string) {
+    this.newmessageList.push({
+      receiverId: email,
+      messageText: message
     });
   }
 

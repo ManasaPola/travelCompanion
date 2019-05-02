@@ -1,58 +1,103 @@
-<div class="row image">
-  <div class="col-md-1"></div>
-  <div class="col-md-12">
-  <div class="panel panel-primary panel-transparent">
-    <div class="panel-heading">
-      <h3 class="panel-title">Please, enter your details</h3>
-      <form class="form-inline" #travellerSearchForm="ngForm" (ngSubmit)="onSearch(travellerSearchForm)">
-        <div class="form-group mr-2">
-          <!--<label>From Airport</label>-->
-          <input class="form-control" name="fromAirport" #fromAirport="ngModel" [(ngModel)]="travellerService.fromAirport" placeholder="From Aiport">
+<div class="image">
+  <div class="row">
+    <br/><br/><br/><br/>
+  </div>
+  <div class="row">
+    <div class="col-sm-11 mx-auto">
+      <div class="card bg-secondary text-white">
+        <div class="card-title">
+          <h4 class="text-center">Enter your travel information</h4>
+
         </div>
-        <div class="form-group mr-2">
-          <!--<label>To Airport</label>-->
-          <input class="form-control" name="toAirport" #toAirport="ngModel" [(ngModel)]="travellerService.toAirport" placeholder="To Airport">
+
+        <div class="card-body">
+          <form class="form-inline" #travellerSearchForm="ngForm" (ngSubmit)="onSearch(travellerSearchForm)">
+            <div class="form-group mx-auto">
+              <!--<label>From Airport</label>-->
+              <input class="form-control" name="fromAirport" #fromAirport="ngModel" [(ngModel)]="travellerService.fromAirport" placeholder="From Airport">
+            </div>
+            <div class="form-group mx-auto">
+              <!--<label>To Airport</label>-->
+              <input class="form-control" name="toAirport" #toAirport="ngModel" [(ngModel)]="travellerService.toAirport" placeholder="To Airport">
+            </div>
+            <div class="form-group mx-auto">
+              <!--<label>From Date</label>-->
+              <input type="date" class="form-control" name="fromDate" #fromDate="ngModel" [(ngModel)]="travellerService.fromDate" placeholder="From Date (MM/DD/YYYY)">
+            </div>
+            <div class="form-group mx-auto">
+              <!--<label>To Date</label>-->
+              <input type="date" class="form-control" name="toDate" #toDate="ngModel" [(ngModel)]="travellerService.toDate" placeholder="To Date (MM/DD/YYYY)">
+            </div>
+            <div class="form-group mx-auto">
+              <button class="btn btn-primary" type="submit">
+                <i class="fa fa-floppy-o"></i>
+                Search</button>
+            </div>
+          </form>
         </div>
-        <div class="form-group mr-2">
-          <!--<label>From Date</label>-->
-          <input type="date" class="form-control" name="fromDate" #fromDate="ngModel" [(ngModel)]="travellerService.fromDate" placeholder="From Date (MM/DD/YYYY)">
-        </div>
-        <div class="form-group mr-2">
-          <!--<label>To Date</label>-->
-          <input type="date" class="form-control" name="toDate" #toDate="ngModel" [(ngModel)]="travellerService.toDate" placeholder="To Date (MM/DD/YYYY)">
-        </div>
-        <div class="form-group">
-          <button class="btn btn-default" type="submit">
-            <i class="fa fa-floppy-o"></i>
-            Search</button>
-        </div>
-      </form>
-    </div>
-    <br>
-    <br>
-    <div class="panel-body">
-      <h6 class="text-center">Travellers Info</h6><br/>
-      <table class="table-sm table-hover">
-        <tr *ngFor="let traveller of newTravallerList">
-          <td>{{traveller.name}}</td>
-          <td>{{traveller.fromAirport}}</td>
-          <td>{{traveller.toAirport}}</td>
-          <td>{{traveller.fromDate}}</td>
-          <td>{{traveller.toDate}}</td>
-          <td>
-            <a class="btn" (click)="onSend()">
-              <i class="fa fa-comment-o"></i>
-            </a>
-          </td>
-        </tr>
-      </table>
+      </div>
     </div>
   </div>
+  <br/>
+  <div class="row">
+    <div class="col-sm-11 mx-auto">
+      <div class="card" style="background-color: #ffffff">
+        <div class="card-title">
+          <h4 class="text-center">Travellers Info</h4><br/>
+        </div>
+        <div class="card-body">
+          <table class="table-sm table-hover">
+            <tr *ngFor="let traveller of newTravallerList">
+              <td>{{traveller.name}}</td>
+              <td>{{traveller.fromAirport}}</td>
+              <td>{{traveller.toAirport}}</td>
+              <td>{{traveller.fromDate}}</td>
+              <td>{{traveller.toDate}}</td>
+              <td>
+                <!--<a class="btn" (click)="onSend()">-->
+                  <!--<i class="fa fa-comment-o"></i>-->
+                <!--</a>-->
+                <button type="button" class="btn btn-info btn-lg" (click)="openModal(traveller.name)">Chat</button>
+                <div class="backdrop" [ngStyle]="{'display':display}"></div>
+                <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title"><span>{{title}} </span></h4>
+                      </div>
+                      <div class="modal-body">
+                        <form class="form-inline" #messageDataForm="ngForm" (ngSubmit)="onSend(messageDataForm)">
+                          <div class="form-group mr-1">
+                            <input class="form-control" name="messageText" #messageText="ngModel" [(ngModel)]="travellerService.messageText" placeholder="Start typing.........">
+                          </div>
+                          <div class="form-group">
+                            <button class="btn btn-default" type="submit">
+                              Send</button>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
+                      </div>
+                    </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+                </div><!-- /.modal !-->
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-
-
-
-
-
+<!--<div class="mat-elevation-z8">-->
+  <!--<table mat-table [dataSource]="listData" class="mat-elevation-z8">-->
+    <!--<ng-container matColumnDef="Name">-->
+      <!--<th mat-header-cell *matHeaderCellDef> Name </th>-->
+      <!--<td mat-cell *matCellDef="let element"> {{element|json}} </td>-->
+    <!--</ng-container>-->
+    <!--<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
+    <!--<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>-->
+    <!--</table>-->
+<!--</div>-->

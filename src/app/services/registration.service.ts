@@ -15,7 +15,7 @@ export class RegistrationService {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(
         response => {
-          this.router.navigateByUrl('/Travellers');
+          this.router.navigateByUrl('/home');
           this.loginService.login(email, password);
         }
       )
@@ -28,7 +28,7 @@ export class RegistrationService {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(
         response => {console.log('LOGIN SUCCESSFULL');
-        this.router.navigateByUrl('/Travellers');
+        this.router.navigateByUrl('/home');
         this.loginService.login(email, password);
         }
       )

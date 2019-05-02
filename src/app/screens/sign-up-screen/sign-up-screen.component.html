@@ -7,29 +7,35 @@
   <meta name="author" content="Manasa Pola">
 </head>
 
-<div class="container">
-  <body class="text-center">
-  <h2>Hey, welcome to Travel Companion</h2>
-  <img src="../../../assets/img/travelcompanions.jpg" alt="TC">
-  <form class="form-signin" (ngSubmit) = "onSubmit(signupForm)" #signupForm="ngForm" >
-    <h5>Register</h5>
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input ngModel name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+<body>
+<div class="container-fluid image">
+  <div class="row">
+    <!-- <div class="col-sm-6">
+    <h5 class="text-center">Hey, welcome to Travel Companion</h5>
+    </div> -->
+    <div class="col-sm-6 mx-auto">
+      <h3 class="text-center">Hey, welcome to Travel Companion</h3>
+      <form class="form-signin" (ngSubmit) = "onSubmit(signupForm)" #signupForm="ngForm" >
+        <h5>Register</h5>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input ngModel name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <br/>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input ngModel name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="center">
+          <button class="btn btn-lg btn-primary btn-block" [disabled]="!signupForm.valid" type="submit">Sign Up</button>
+        </div>
 
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input ngModel name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="mt-4 text-center">
+          Already registered? <a routerLink="/login">Login</a>
+        </div>
 
-    <div class="center">
-      <button class="btn btn-lg btn-primary btn-block" [disabled]="!signupForm.valid" type="submit">Sign Up</button>
+        <p class="mt-4 mb-3 text-muted">Copyright &copy; 2019 &mdash; Cloud Computing Team</p>
+      </form>
     </div>
-
-    <div class="mt-4 text-center">
-      Already registered? <a routerLink="/login">Login</a>
-    </div>
-
-    <p class="mt-5 mb-3 text-muted">Copyright &copy; 2019 &mdash; Cloud Computing Team</p>
-  </form>
-  </body>
+  </div>
 </div>
+
+</body>
 
 </html>

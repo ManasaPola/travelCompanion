@@ -1,22 +1,12 @@
-body {
-  background:#c33;
-}
-
-.panel-transparent {
-  background: none;
-}
-
-.panel-transparent .panel-heading{
-  background: rgba(192, 192, 192, 0.2)!important;
-}
-
-.panel-transparent .panel-body{
-  background: rgba(46, 51, 56, 0.2)!important;
-}
-
 .image{
   height:40em; background-size:cover; width:auto;
-  opacity: 0.6;
-  background-image:url('../../../assets/img/background.jpg');
+  background-image:url('./../../../assets/img/image2m.png');
   background-position:50% 50%;
 }
+/*table {*/
+  /*width: 100%;*/
+/*}*/
+/*.data-table{*/
+  /*width: 80%;*/
+  /*margin: 20px auto;*/
+/*}*/

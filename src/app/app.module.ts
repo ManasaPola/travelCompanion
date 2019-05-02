@@ -26,6 +26,7 @@ import {LoginService} from './screens/login-screen/login.service';
 import { HomeComponent } from './components/home/home.component';
 import { TravellerSearchComponent } from './components/traveller-search/traveller-search.component';
 import { TravelregisterComponent } from './components/travelregister/travelregister.component';
+import {MaterialModule} from './material/material.module';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { TravelregisterComponent } from './components/travelregister/travelregis
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     FormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MaterialModule
   ],
   providers: [UserService, RegistrationService, TravellerService, MessagingService, LoginService],
   bootstrap: [AppComponent]
