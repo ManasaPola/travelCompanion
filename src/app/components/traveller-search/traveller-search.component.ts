@@ -37,7 +37,8 @@ export class TravellerSearchComponent implements OnInit {
             const givenTodate = y.toDate.split('/');
             const from = new Date(givenFromdate[2], parseInt(givenFromdate[0]) - 1, givenFromdate[1]);
             const to = new Date(givenTodate[2], parseInt(givenTodate[0]) - 1, givenTodate[1]);
-            if ((fromCheck >= from && fromCheck <= to) || (toCheck >= to && toCheck <= to) || (fromCheck <= from && toCheck >= to)) {
+            // if ((fromCheck >= from && fromCheck <= to) || (toCheck >= to && toCheck <= to) || (fromCheck <= from && toCheck >= to)) {
+            if (!(to < fromCheck || from > toCheck)) {
               console.log('Entered');
               y['$key'] = element.key;
               this.travellerList.push(y as Traveller);
