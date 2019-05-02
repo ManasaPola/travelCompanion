@@ -16,11 +16,11 @@ export class TravelregisterComponent implements OnInit {
     this.resetForm();
   }
 
-  onSubmit(travellerRegisterForm: NgForm) {
-    this.travellerService.insertTraveller(travellerRegisterForm.value);
-    this.resetForm(travellerForm);
-    this.tostr.success('Submitted Sucessfully', 'Registration');
-  }
+  // onSubmit(travellerRegisterForm: NgForm) {
+  //   this.travellerService.insertTraveller(travellerRegisterForm.value);
+  //   this.resetForm(travellerForm);
+  //   this.tostr.success('Submitted Sucessfully', 'Registration');
+  // }
 
   resetForm(travellerForm?: NgForm) {
     if (travellerForm != null) {

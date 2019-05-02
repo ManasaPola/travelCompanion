@@ -5,9 +5,6 @@
     <div class="panel-heading">
       <h3 class="panel-title">Please, enter your details</h3>
       <form class="form-inline" #travellerSearchForm="ngForm" (ngSubmit)="onSearch(travellerSearchForm)">
-        <div class="form-group mr-1">
-          <input class="form-control" name="name" #name="ngModel" [(ngModel)]="travellerService.name" placeholder="Full Name">
-        </div>
         <div class="form-group mr-2">
           <!--<label>From Airport</label>-->
           <input class="form-control" name="fromAirport" #fromAirport="ngModel" [(ngModel)]="travellerService.fromAirport" placeholder="From Aiport">
@@ -18,11 +15,11 @@
         </div>
         <div class="form-group mr-2">
           <!--<label>From Date</label>-->
-          <input class="form-control" name="fromDate" #fromDate="ngModel" [(ngModel)]="travellerService.fromDate" placeholder="From Date (MM/DD/YYYY)">
+          <input type="date" class="form-control" name="fromDate" #fromDate="ngModel" [(ngModel)]="travellerService.fromDate" placeholder="From Date (MM/DD/YYYY)">
         </div>
         <div class="form-group mr-2">
           <!--<label>To Date</label>-->
-          <input class="form-control" name="toDate" #toDate="ngModel" [(ngModel)]="travellerService.toDate" placeholder="To Date (MM/DD/YYYY)">
+          <input type="date" class="form-control" name="toDate" #toDate="ngModel" [(ngModel)]="travellerService.toDate" placeholder="To Date (MM/DD/YYYY)">
         </div>
         <div class="form-group">
           <button class="btn btn-default" type="submit">
@@ -36,7 +33,7 @@
     <div class="panel-body">
       <h6 class="text-center">Travellers Info</h6><br/>
       <table class="table-sm table-hover">
-        <tr *ngFor="let traveller of travellerList">
+        <tr *ngFor="let traveller of newTravallerList">
           <td>{{traveller.name}}</td>
           <td>{{traveller.fromAirport}}</td>
           <td>{{traveller.toAirport}}</td>

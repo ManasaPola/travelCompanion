@@ -13,16 +13,7 @@ export class TravellerService {
   constructor(private firebase: AngularFireDatabase) { }
 
   getData() {
-    // const fromAirportref = this.firebase.child('travellers').orderByChild('fromAirport').equalTo('Phoenix');
-    // const fromAirportref = this.firebase.list('travellers', fromAirportref => fromAirportref.orderByChild('fromAirport').
-    // equalTo('Hyderabad'));
-    // this.travellerListfromDate = this.firebase.list('travellers', ref => ref.orderByChild('fromDate').endAt('3/20/2019'))
-    // this.travellerListtoDate = this.firebase.list('travellers', ref => ref.orderByChild('toDate').startAt('3/25/2019'))
-    // this.travellerList = this.travellerListfromDate.concat(this.travellerListtoDate);
     this.travellerList = this.firebase.list('travellers');
-    // this.travellerList = this.firebase.list('travellers', ref => ref.orderByChild('toAirport').equalTo('Phoenix'));
-    // this.travellerList = this.firebase.list('travellers', ref => ref.orderByChild('fromDate').endAt('4/30/2019'));
-    // this.travellerList = this.firebase.list('travellers', ref => ref.orderByChild('fromDate').startAt('4/29/2019').endAt('4/29/2019'));
     return this.travellerList;
   }
 
