@@ -64,10 +64,9 @@ export class TravellerSearchComponent implements OnInit {
     this.display = 'none';
   }
 
-  onSend(messageDataForm: NgForm) {
-    console.log(messageDataForm.value.messageText);
+  onSend(messageDataForm: NgForm, name: string) {
     this.user = this.loginService.send();
-    this.travellerService.sendMessageData(messageDataForm.value.messageText, this.user.email);
+    this.travellerService.sendMessageData(messageDataForm.value.messageText, name);
     this.tostr.success('Success', 'Message Sent Successfully');
   }
 }

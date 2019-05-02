@@ -37,12 +37,12 @@ export class TravellerService {
     });
   }
 
-  insertTraveller(traveller: Traveller) {
+  insertTraveller(traveller: Traveller, name: string) {
     if (!this.travellerList) {
       this.travellerList = this.getData();
     }
     this.travellerList.push({
-      name: traveller.name,
+      name: name,
       fromAirport: traveller.fromAirport,
       toAirport: traveller.toAirport,
       fromDate: traveller.fromDate,

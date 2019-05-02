@@ -66,7 +66,7 @@
                         <h4 class="modal-title"><span>{{title}} </span></h4>
                       </div>
                       <div class="modal-body">
-                        <form class="form-inline" #messageDataForm="ngForm" (ngSubmit)="onSend(messageDataForm)">
+                        <form class="form-inline" #messageDataForm="ngForm" (ngSubmit)="onSend(messageDataForm, traveller.name)">
                           <div class="form-group mr-1">
                             <input class="form-control" name="messageText" #messageText="ngModel" [(ngModel)]="travellerService.messageText" placeholder="Start typing.........">
                           </div>
