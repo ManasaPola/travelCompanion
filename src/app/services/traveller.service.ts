@@ -27,13 +27,14 @@ export class TravellerService {
     return this.messageList;
   }
 
-  sendMessageData(message: string,email: string) {
+  sendMessageData(message: string, email: string, senderemail: string) {
     if (!this.messageObj) {
       this.messageObj = this.getMData();
     }
     this.messageObj.push({
       messageText: message,
-      receiverId: email
+      receiverId: email,
+      senderId: senderemail
     });
   }
 

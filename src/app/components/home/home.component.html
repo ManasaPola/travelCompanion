@@ -28,7 +28,7 @@
       <!--<textarea placeholder="Type message.." name="msg" required></textarea>-->
       <table class="table-sm table-hover">
         <tr *ngFor="let message of newMessageList">
-          <td>{{message.receiverId.split('@')[0]}}</td>
+          <td>{{message.senderId.split('@')[0]}}</td>
           <td>{{message.messageText}}</td>
         </tr>
       </table>
