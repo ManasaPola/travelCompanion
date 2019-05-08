@@ -3,6 +3,8 @@
 Travel Companion allow you to register your travel itinerary and matches travelers with similar itineraries based on source, destination and dates of travel.
 This application is developed using Firebase Realtime Database, Firebase Authentication , Angular Framework.
 
+Make sure to include firebase related details in environment.ts file to get it running.
+
 #### Hosted Link: https://travel-52701.firebaseapp.com/ 
 
 Please, find the attached report for more details about the project.
